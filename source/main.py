@@ -1,11 +1,13 @@
-#import matplotlib.pyplot as plt
-from models import Forced_harmonic_oscillator
-from tools import Poincare
+import matplotlib.pyplot as plt
+from models import *
+from tools import Poincare, System_ode
 
-sys = Forced_harmonic_oscillator()
+sys = Damped_harmonic_oscillator()
 
-#def poincare(model, x_ini, period = 1, num_of_periods = 100,\
- #            last_periods = 10, resolution = 100):
-p = Poincare(sys.rhs, [0, 0] )
+sym = System_ode(sys)
 
-p.plot_map(3)
+
+sym.reintegrate(100, [1, 0], 640)
+#sym.plot_time_series()
+sym.plot_phase_portrait()
+#sym.plot_poincare_map(16)
