@@ -1,7 +1,7 @@
 # dyn-sys-analysis
  
 Program containg basic tools for analysis of dynamical systems.
-It is helpful to solve systems of first order ODEs, plot time series,
+It is helpful to solve systems of first order ODEs and visualise them via time series,
 poincare maps, phase diagrams and maybe more in future.
 
 ## dependencies
