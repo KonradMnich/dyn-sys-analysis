@@ -44,7 +44,7 @@ class Forced_harmonic_oscillator:
 
 class Duffing:
     
-    def __init__(self, a=-1, b=1, d=0.3, w=1.2, y=0.37):
+    def __init__(self, a=-1, b=-5, d=-0.02, w=0.5, y=8):
         self.a = a
         self.b = b
         self.d = d
@@ -53,7 +53,7 @@ class Duffing:
         
     def rhs(self, x, t):
         x0 = x[1]
-        x1 = -self.a*x[0] - self.b*x[0]**3 - self.d*x[1] +\
+        x1 = self.a*x[0] + self.b*x[0]**3 + self.d*x[1] +\
             self.y*np.cos(self.w * t)
         return[x0, x1]
     

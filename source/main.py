@@ -1,13 +1,17 @@
-import matplotlib.pyplot as plt
-from models import *
-from tools import Poincare, System_ode
+from models import Forced_harmonic_oscillator
+from tools import ODE_preview
 
-sys = Damped_harmonic_oscillator()
+# define your system
+sys = Forced_harmonic_oscillator()
 
-sym = System_ode(sys)
+# pass the system to the ODE_preview object
+sym = ODE_preview(sys)
 
+# solve the system before visualisation
+sym.solve(100, [1, 0], 10000)
 
-sym.reintegrate(100, [1, 0], 640)
-#sym.plot_time_series()
+# visualise
+sym.plot_time_series()
 sym.plot_phase_portrait()
-#sym.plot_poincare_map(16)
+sym.plot_poincare_map()
+sym.plot_resonance()
