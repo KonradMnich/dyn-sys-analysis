@@ -1,7 +1,7 @@
 # dyn-sys-analysis
  
 Program containg basic tools for analysis of dynamical systems with two degrees of freedom.
-It is helpful to solve systems of first order ODEs and visualise them via time series,
+It may be helpful to solve systems of first order ODEs and visualise them via time series,
 poincare maps, phase diagrams and maybe more in future.
 
 ## dependencies
