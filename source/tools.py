@@ -34,7 +34,12 @@ class ODE_preview:
         print('time series plotted')
         
     def plot_poincare_map(self, T=6.28):
-        T_n = int(round(T/(self.t[1] - self.t[0])))
+        try:
+            T = 2*3.141529/self.model.w
+            T_n = int(round(T/(self.t[1] - self.t[0])))
+        except:
+            T_n = int(round(T/(self.t[1] - self.t[0])))
+            
         index = range(0, len(self.x), T_n)
         plt.figure()
         plt.scatter(self.x[index, 0], self.x[index, 1], s=3)
